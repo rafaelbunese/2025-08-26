@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela de Atletas</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .animate-fadeIn {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-4 sm:p-6 lg:p-8">
+    <div class="max-w-7xl mx-auto bg-white rounded-xl shadow-lg animate-fadeIn">
+        <div class="px-4 py-6 sm:px-6 lg:px-8 border-b border-gray-200">
+            <div class="flex flex-col sm:flex-row items-center sm:justify-between">
+                <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 leading-tight mb-2 sm:mb-0">
+                    Vagas em aberto
+                </h1>
+                <div class="flex items-center space-x-2 text-sm text-gray-500">
+                    <span class="font-medium">Atualização: 26/08/2025</span>
+                </div>
+            </div>
+            <p class="mt-2 text-base text-gray-600">
+                Caso alguma vaga seja de seu interesse, preencha o formulário no link abaixo.
+                <a href="https://abre.ai/nqhB" class="text-blue-600 hover:text-blue-800 underline">https://abre.ai/nqhB</a>
+            </p>
+        </div>
+        <div class="px-4 py-6 sm:px-6 lg:px-8">
+            <!-- Barra de busca -->
+            <div class="mb-4">
+                <input type="text" id="searchInput" placeholder="Buscar por ano, posição ou região..." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200">
+            </div>
+            
+            <div class="overflow-x-auto rounded-lg shadow-sm border border-gray-200">
+                <table class="min-w-full divide-y divide-gray-200" id="athletesTable">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider rounded-tl-lg">
+                                Ano de nascimento
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Posição procurada
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider rounded-tr-lg">
+                                Região onde está o Clube
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2003</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Extremo</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Sul do Estado de Santa Catarina</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2005</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Centroavante</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Distrito Federal</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2005</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Volante</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Distrito Federal</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2005</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Zagueiro</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Distrito Federal</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2006</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Centroavante</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Distrito Federal</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2006</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Ponta esquerda</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Região de Ribeirão Preto</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2006</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Volante</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Distrito Federal</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2006</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Zagueiro</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Distrito Federal</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2007</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Ponta direita</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Região de Ribeirão Preto</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2008</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Goleiro</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Região de Sorocaba</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2008</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Zagueiro</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Região de Sorocaba</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2009</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Centroavante</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Região de Ribeirão Preto</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2009</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Ponta direita</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Região de Ribeirão Preto</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2009</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Volante</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Região de Ribeirão Preto</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2010</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Extremos</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Região Metropolitana de Belo Horizonte</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2010</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Lateral direito</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Região Metropolitana de Belo Horizonte</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2010</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Zagueiro</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Região de Sorocaba</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2010</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Zagueiro</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Região de Sorocaba</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2010</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Zagueiro canhoto</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Região de Ribeirão Preto</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2010</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Zagueiro destro</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Região de Ribeirão Preto</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2011</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Goleiro</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Região de Sorocaba</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2011</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Lateral direito</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Região de Ribeirão Preto</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2011</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Lateral esquerdo</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Região de Ribeirão Preto</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2011</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Ponta direita</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Região de Ribeirão Preto</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2012</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Ponta canhoto</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Região de Ribeirão Preto</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2012</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Ponta destro</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Região de Ribeirão Preto</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2012</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Volante construtor</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Região de Ribeirão Preto</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2013</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Centroavante</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Região de Ribeirão Preto</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="px-4 py-4 sm:px-6 lg:px-8 text-center text-gray-500 text-sm border-t border-gray-200">
+            &copy; 2025 Rafael Bunese. Todos os direitos reservados.
+        </div>
+    </div>
+
+    <script>
+        // Função para filtrar a tabela
+        document.getElementById('searchInput').addEventListener('keyup', function() {
+            let filter = this.value.toLowerCase();
+            let table = document.getElementById('athletesTable');
+            let tr = table.getElementsByTagName('tr');
+
+            // Itera sobre as linhas da tabela, começando da segunda (ignora o cabeçalho)
+            for (let i = 1; i < tr.length; i++) {
+                let showRow = false;
+                let tds = tr[i].getElementsByTagName('td');
+                
+                // Itera sobre todas as células de cada linha para buscar a correspondência
+                for (let j = 0; j < tds.length; j++) {
+                    let td = tds[j];
+                    if (td) {
+                        let textValue = td.textContent || td.innerText;
+                        if (textValue.toLowerCase().indexOf(filter) > -1) {
+                            showRow = true;
+                            break; // Se encontrar, não precisa verificar as outras células
+                        }
+                    }
+                }
+
+                if (showRow) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        });
+    </script>
+</body>
+</html>
